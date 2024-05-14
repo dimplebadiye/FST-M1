@@ -1,4 +1,4 @@
-package org.activity1;
+package org.Activities;
 
 public class Activity1 {
     public static void main(String[] args) {

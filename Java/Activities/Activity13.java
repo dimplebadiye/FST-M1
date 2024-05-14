@@ -1,4 +1,4 @@
-package org.activity;
+package org.Activities;
 
 import java.util.ArrayList;
 import java.util.Random;

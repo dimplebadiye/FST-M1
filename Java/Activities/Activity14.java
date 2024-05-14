@@ -1,4 +1,4 @@
-package org.activity;
+package org.Activities;
 
 import org.apache.commons.io.FileUtils;
 

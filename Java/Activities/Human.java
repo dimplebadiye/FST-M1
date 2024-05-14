@@ -1,4 +1,4 @@
-package org.examples;
+package org.Activities;
 
 public class Human {
     //Overridden method

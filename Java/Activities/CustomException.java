@@ -1,4 +1,4 @@
-package org.activity8;
+package org.Activities;
 
 public class CustomException extends Exception {
 

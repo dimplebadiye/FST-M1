@@ -1,4 +1,4 @@
-package org.activity12;
+package org.Activities;
 
 public class Activity12 {
 

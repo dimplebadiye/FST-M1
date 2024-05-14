@@ -1,4 +1,4 @@
-package org.activity6;
+package org.Activities;
 
 import java.util.ArrayList;
 import java.util.Date;

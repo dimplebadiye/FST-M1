@@ -1,4 +1,4 @@
-package org.activity1;
+package org.Activities;
 
 public class Car {
     String color;

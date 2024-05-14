@@ -1,4 +1,4 @@
-package org.activity5;
+package org.Activities;
 
 public abstract class Book {
     String title;

@@ -1,4 +1,4 @@
-package org.activity7;
+package org.Activities;
 
 public class Bicycle implements BicycleParts, BicycleOperations {
     public int gears;

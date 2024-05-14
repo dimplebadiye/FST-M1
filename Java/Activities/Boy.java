@@ -1,4 +1,4 @@
-package org.examples;
+package org.Activities;
 
 public class Boy extends Human {
     //Overriding method
