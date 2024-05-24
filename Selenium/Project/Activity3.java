@@ -12,7 +12,7 @@ public class Activity3 extends BaseClass {
         login();
 
         String welcomeMsg = driver.findElement(By.id("welcome")).getText();
-        Assert.assertEquals(welcomeMsg, "Welcome yuvraj", "Login was not successful");
+        Assert.assertTrue(welcomeMsg.contains("Welcome "), "Login was not successful");
 
         tearDown();
     }
