@@ -4,6 +4,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -28,10 +29,12 @@ public class BaseClass {
         driver.get("http://alchemy.hguy.co/orangehrm");
     }
 
-    public void login(){
+    public void login() throws InterruptedException {
         driver.findElement(By.id("txtUsername")).sendKeys("orange");
         driver.findElement(By.id("txtPassword")).sendKeys("orangepassword123");
         driver.findElement(By.id("btnLogin")).click();
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.tagName("h1")));
+        Thread.sleep(5000);
     }
 
     public void tearDown(){

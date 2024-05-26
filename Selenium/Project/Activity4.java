@@ -10,7 +10,7 @@ import java.util.List;
 public class Activity4 extends BaseClass {
 
     @Test
-    public void addNewEmployee(){
+    public void addNewEmployee() throws InterruptedException {
         setUp();
         login();
 
