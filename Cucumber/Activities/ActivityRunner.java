@@ -10,7 +10,8 @@ import org.junit.runner.RunWith;
         tags = "@activity5",
         publish = true,
         plugin = {"pretty"},
+        //plugin = {"json: test-reports/json-report.json"},
+        //plugin = {"html: test-reports"},
         monochrome = true)
-        //plugin = {"html:target/cucumber-reports/reports"})
 public class ActivityRunner {
 }
