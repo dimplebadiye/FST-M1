@@ -3,6 +3,7 @@ package activities;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -13,6 +14,7 @@ import org.testng.annotations.Test;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
+import java.util.List;
 
 public class Activity4 {
 
@@ -43,8 +45,8 @@ public class Activity4 {
         driver.findElement(AppiumBy.xpath("//android.widget.EditText[@text=\"Phone\"]")).sendKeys("999148292");
         driver.findElement(AppiumBy.id("com.google.android.contacts:id/toolbar_button")).click();
         wait.until(ExpectedConditions.elementToBeClickable(AppiumBy.xpath("//android.widget.TextView[@resource-id=\"com.google.android.dialer:id/contact_name\" and @text=\"Create new contact\"]")));
-        String contactName = driver.findElement(AppiumBy.xpath("//android.widget.TextView[@resource-id=\"com.google.android.dialer:id/contact_name\" and @text=\"Aaditya Verma\"]")).getText();
-        Assert.assertEquals(contactName, "Aaditya Varma");
+        List<WebElement> contactNames = driver.findElements(AppiumBy.xpath("//android.widget.TextView[@resource-id=\"com.google.android.dialer:id/contact_name\" ]"));
+        Assert.assertEquals(contactNames.get(1).getText(), "Aaditya Varma");
     }
 
     @AfterClass
