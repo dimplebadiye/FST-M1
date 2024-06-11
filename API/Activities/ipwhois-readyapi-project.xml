@@ -73,10 +73,10 @@
           <con:stopDatasourceExhausted>false</con:stopDatasourceExhausted>
         </con:config>
       </con:testStep>
-      <con:testStep type="restrequest" name="Request 1" id="0a24f2fc-761a-4460-83a1-7771bceded96">
+      <con:testStep type="restrequest" name="Request" id="0a24f2fc-761a-4460-83a1-7771bceded96">
         <con:settings/>
         <con:config service="http://ipwhois.app" resourcePath="/json/{IP}" methodName="IP" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-          <con:restRequest name="Request 1" id="df7a1f3d-8c93-4dca-97e5-03c4db89e23b" mediaType="application/json">
+          <con:restRequest name="Request" id="df7a1f3d-8c93-4dca-97e5-03c4db89e23b" mediaType="application/json">
             <con:settings>
               <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
             </con:settings>
@@ -87,15 +87,6 @@
               <con:settings/>
               <con:configuration>
                 <codes>200</codes>
-              </con:configuration>
-            </con:assertion>
-            <con:assertion type="JsonPath Match" id="33cabba0-5421-4521-9013-09e12dbfbf53" name="JSONPath Match">
-              <con:configuration>
-                <path>$['country']</path>
-                <content/>
-                <allowWildcards>false</allowWildcards>
-                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
-                <ignoreComments>false</ignoreComments>
               </con:configuration>
             </con:assertion>
             <con:credentials>
@@ -112,16 +103,16 @@
           </con:restRequest>
         </con:config>
       </con:testStep>
-      <con:testStep type="transfer" name="PropertyTransfer 1" id="718c16c0-3f5d-4f4c-aaa4-9b63adad2584">
+      <con:testStep type="transfer" name="PropertyTransfer" id="718c16c0-3f5d-4f4c-aaa4-9b63adad2584">
         <con:settings/>
         <con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
           <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferChildNodes="false" entitize="false" transferToAll="false">
             <con:name>city</con:name>
             <con:sourceType>Response</con:sourceType>
-            <con:sourceStep>Request 1</con:sourceStep>
+            <con:sourceStep>Request</con:sourceStep>
             <con:sourcePath>$['city']</con:sourcePath>
             <con:targetType>city_name</con:targetType>
-            <con:targetStep>Data Sink</con:targetStep>
+            <con:targetStep>DataSink</con:targetStep>
             <con:targetPath/>
             <con:type>JSONPATH</con:type>
             <con:upgraded>true</con:upgraded>
@@ -129,10 +120,10 @@
           <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true">
             <con:name>latitude</con:name>
             <con:sourceType>Response</con:sourceType>
-            <con:sourceStep>Request 1</con:sourceStep>
+            <con:sourceStep>Request</con:sourceStep>
             <con:sourcePath>$['latitude']</con:sourcePath>
             <con:targetType>latitude</con:targetType>
-            <con:targetStep>Data Sink</con:targetStep>
+            <con:targetStep>DataSink</con:targetStep>
             <con:targetPath/>
             <con:type>JSONPATH</con:type>
             <con:upgraded>true</con:upgraded>
@@ -140,17 +131,17 @@
           <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true">
             <con:name>longitude</con:name>
             <con:sourceType>Response</con:sourceType>
-            <con:sourceStep>Request 1</con:sourceStep>
+            <con:sourceStep>Request</con:sourceStep>
             <con:sourcePath>$['longitude']</con:sourcePath>
             <con:targetType>longitude</con:targetType>
-            <con:targetStep>Data Sink</con:targetStep>
+            <con:targetStep>DataSink</con:targetStep>
             <con:targetPath/>
             <con:type>JSONPATH</con:type>
             <con:upgraded>true</con:upgraded>
           </con:transfers>
         </con:config>
       </con:testStep>
-      <con:testStep type="datasink" name="Data Sink" id="6c21d265-f9d7-4492-a326-2a245f742ce3">
+      <con:testStep type="datasink" name="DataSink" id="6c21d265-f9d7-4492-a326-2a245f742ce3">
         <con:settings/>
         <con:config xsi:type="con:DataSinkStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
           <con:dataSink type="JDBC">
@@ -166,20 +157,20 @@
           <con:properties>
             <con:property>
               <con:name>city_name</con:name>
-              <con:value xsi:nil="true"/>
+              <con:value>Los Angeles</con:value>
             </con:property>
             <con:property>
               <con:name>latitude</con:name>
-              <con:value xsi:nil="true"/>
+              <con:value>34.0522342</con:value>
             </con:property>
             <con:property>
               <con:name>longitude</con:name>
-              <con:value xsi:nil="true"/>
+              <con:value>-118.2436849</con:value>
             </con:property>
           </con:properties>
         </con:config>
       </con:testStep>
-      <con:testStep type="datasourceloop" name="Data Source Loop" id="5a7e3296-79ee-4613-8631-3a72105394f7">
+      <con:testStep type="datasourceloop" name="DataSourceLoop" id="5a7e3296-79ee-4613-8631-3a72105394f7">
         <con:settings/>
         <con:config>
           <dataSourceStep>Data Source</dataSourceStep>
